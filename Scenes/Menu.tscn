@@ -1,0 +1,80 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Scripts/menu.gd" type="Script" id=1]
+
+[node name="Menu" type="CanvasLayer"]
+script = ExtResource( 1 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+show_behind_parent = true
+light_mask = 0
+margin_left = 240.0
+margin_top = 90.0
+margin_right = 360.0
+margin_bottom = 290.0
+color = Color( 0, 0, 0, 0.588235 )
+
+[node name="Label3" type="Label" parent="."]
+margin_left = 260.0
+margin_top = 235.0
+margin_right = 340.0
+margin_bottom = 283.0
+rect_rotation = -0.0066776
+rect_pivot_offset = Vector2( -254, -40 )
+text = "Keys:
+x > Resume
+m > Menu"
+align = 1
+
+[node name="Volume" type="HSlider" parent="."]
+margin_left = 270.0
+margin_top = 140.0
+margin_right = 330.0
+margin_bottom = 156.0
+value = 90.0
+
+[node name="Label2" type="Label" parent="."]
+margin_left = 270.0
+margin_top = 125.0
+margin_right = 330.0
+margin_bottom = 139.0
+rect_pivot_offset = Vector2( 43, 31 )
+text = "Volume:"
+align = 1
+
+[node name="Label" type="Label" parent="."]
+margin_left = 270.0
+margin_top = 100.0
+margin_right = 330.0
+margin_bottom = 114.0
+rect_pivot_offset = Vector2( 26, 14 )
+text = "Settings"
+align = 1
+uppercase = true
+
+[node name="Button" type="Button" parent="."]
+margin_left = 268.0
+margin_top = 210.0
+margin_right = 332.0
+margin_bottom = 230.0
+text = "Resume"
+
+[node name="Rotation" type="HSlider" parent="."]
+margin_left = 270.0
+margin_top = 190.0
+margin_right = 330.0
+margin_bottom = 206.0
+value = 90.0
+
+[node name="Label4" type="Label" parent="."]
+margin_left = 250.0
+margin_top = 175.0
+margin_right = 350.0
+margin_bottom = 189.0
+rect_pivot_offset = Vector2( 43, 31 )
+text = "Rotation Speed:"
+align = 1
+
+[connection signal="value_changed" from="Volume" to="." method="_on_Volume_value_changed"]
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
+[connection signal="value_changed" from="Rotation" to="." method="_on_Rotation_value_changed"]
